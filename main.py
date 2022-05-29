@@ -6,35 +6,31 @@
 from fileinput import filename
 from typing import Counter
 
+##Alternative
+# def read_file_content(filename):
+#     # [assignment] Add your code here 
+#     filename = 'story.txt'
+#     with open(filename) as st:
+#         return Counter(st.read().split())
+    
+# print(read_file_content(filename))
 
 def read_file_content(filename):
     # [assignment] Add your code here 
     filename = 'story.txt'
+    # with open(filename) as st:
     with open(filename, 'r') as st:
         st_content = st.read()
-        # print(st_content.split())
-    
-    # return "Hello World"
-    return(read_file_content('filename'))
-# def count_words():
-#     text = read_file_content('filename')
-#     # text = None
-#     # [assignment] Add your code here
-#     # try:
-#     d1 = dict()
-#     for line in text:
-#         words = line.split()
-#         for word in words:
-#             if word in d1:
-#                 d1[word] = d1[word] + 1
-#                 return word
-#             else:
-#                 d1[word] = 1
-#     # return d1
-#     # print(d1)
+        st_content = st_content.split()
+        # return Counter(st.read().split())
+        return(st_content)
+    # return(read_file_content(filename))
 
-#     # except RecursionError as re:
-#     #     print("Too big", re)
-#     # return {"as": 10, "would": 20}
-# # count_words(None)    
-# print(count_words())
+def count_words():
+    text = Counter(read_file_content(filename))
+    # [assignment] Add your code here
+    # for line in text:
+    #     return Counter(line) 
+    # return {"as": 10, "would": 20}
+    return(text)
+print(count_words())
